@@ -61,7 +61,9 @@ public class Player : NetworkBehaviour
             if (data.playerData.DictOfStrings.Count>0) { 
                 Debug.LogWarning($"NETWORK DATA SERVER..NPC-COLOR:{data.playerData.NpcColor}, PLAYER-DATA:{data.playerData.DictOfStrings.Get(4)}");
                 Debug.LogWarning($"NETWORK DATA ITEMS:{data.playerData.items.Get(1)}");
-                Debug.LogWarning($"NETWORK ARRAY DATA..:{data.playerData.Rotations.Get(1)}");
+                if (data.playerData.Rotations.Length>0) { 
+                    Debug.LogWarning($"NETWORK ARRAY DATA..:{data.playerData.Rotations.Get(1)}");
+                }
             }
 
             data.direction.Normalize();
